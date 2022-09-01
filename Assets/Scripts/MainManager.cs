@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.IO;
 
 public class MainManager : MonoBehaviour
 {
+    public static MainManager InstanceOfMainManager;
+
     public Brick BrickPrefab;
     public int LineCount = 6;
     public Rigidbody Ball;
