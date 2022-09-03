@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class MainManager : MonoBehaviour
 {
     public Brick BrickPrefab;
@@ -40,7 +41,7 @@ public class MainManager : MonoBehaviour
             }
         }
 
-        bestScoreText.text = "Best Score : " + MainDataManager.InstanceOfMainDataManager.playerName + " : " + MainDataManager.InstanceOfMainDataManager.highScore;
+        bestScoreText.text = "Best Score : " + MainDataManager.InstanceOfMainDataManager.highScorePlayer + " : " + MainDataManager.InstanceOfMainDataManager.highScore;
 
     }
 
@@ -63,21 +64,27 @@ public class MainManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene("Menu");
             }
+
         }
     }
 
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+        ScoreText.text = $"Score : {m_Points} : {MainDataManager.InstanceOfMainDataManager.playerName}";
     }
 
     public void GameOver()
     {
         if (m_Points > MainDataManager.InstanceOfMainDataManager.highScore)
+        {
             MainDataManager.InstanceOfMainDataManager.highScore = m_Points;
+            MainDataManager.InstanceOfMainDataManager.highScorePlayer = MainDataManager.InstanceOfMainDataManager.playerName;
+            MainDataManager.InstanceOfMainDataManager.StoreData();
+        }
 
         m_GameOver = true;
         GameOverText.SetActive(true);

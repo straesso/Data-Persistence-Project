@@ -767,8 +767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 36}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 122, y: 36.7072}
+  m_SizeDelta: {x: 510.793, y: 28.5855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1074924241
 MonoBehaviour:
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.0047169924, g: 0.24309397, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: {fileID: 455435599}
   userScore: 0
+  storedHighscoreText: {fileID: 1074924241}
 --- !u!1 &2113617564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320cbd753be74684dbe833dd78efd2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScorePlayer: 
   playerName: 
   highScore: 0
 --- !u!4 &2113617566
